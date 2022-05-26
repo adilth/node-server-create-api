@@ -3,23 +3,18 @@ let fs = require("fs");
 let figlet = require("figlet");
 let http = require("http");
 let querystring = require("querystring");
-// class Student {
-//   constructor(
-//     name = "unknown",
-//     status = "unknown",
-//     currentOccupation = "unknown"
-//   ) {
-//     this.name = name;
-//     this.status = status;
-//     this.currentOccupation = currentOccupation;
-//   }
-// }
+
 const students = [
-  { name: "leon", status: "bold", currentOccupation: "boss" },
+  { name: "leon", status: "bolder", currentOccupation: "boss" },
   {
     name: "adil",
-    status: "walo",
-    currentOccupation: "noss",
+    status: "confuse",
+    currentOccupation: "learn",
+  },
+  {
+    name: "younes",
+    status: "exciting",
+    currentOccupation: "learn",
   },
 ];
 const server = http.createServer((req, res) => {
@@ -90,42 +85,6 @@ const server = http.createServer((req, res) => {
         res.end();
       });
   }
-  // if (page == "/") {
-  //   createfile("index.html", "text/html");
-  // } else if (page == "/otherpage") {
-  //   createfile("otherpage.html", "text/html");
-  // } else if (page == "/otherotherpage") {
-  //   createfile("otherotherpage.html", "text/html");
-  // } else if (page == "/api") {
-  //   // if ("student" in params) {
-  //   res.writeHead(200, { "Content-Type": "application/json" });
-  //   if (params["student"] == "leon") {
-  //     const leonsss = new Student("leon", "boss", "boll");
-  //     res.end(JSON.stringify(leonsss));
-  //   } //student = leon
-  //   const unknown = new Student("unknown", "unknwon", "unknown");
-  //   res.end(JSON.stringify(unknown));
-  //   // } //student if
-  // } //else if
-  // else if (page == "/css/style.css") {
-  //   fs.readFile("css/style.css", (err, data) => {
-  //     res.write(data);
-  //     res.end();
-  //   });
-  //   // createfile("css/style.css", "text/css");
-  // } else if (page == "/js/main.js") {
-  //   createfile("js/main.js", "text/javascript");
-  // } else {
-  //   figlet("404!!", function (err, data) {
-  //     if (err) {
-  //       console.log("Something went wrong...");
-  //       console.dir(err);
-  //       return;
-  //     }
-  //     res.write(data);
-  //     res.end();
-  //   });
-  // }
 });
 
 server.listen(8000);
